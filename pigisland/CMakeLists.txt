@@ -12,12 +12,17 @@ endif()
 
   
 add_executable(pigisland
-  src/kmint/pigisland/main.cpp
-  src/kmint/pigisland/node_algorithm.cpp
-  src/kmint/pigisland/resources.cpp
-  src/kmint/pigisland/shark.cpp
-  src/kmint/pigisland/boat.cpp
-  src/kmint/pigisland/pig.cpp)
+	src/kmint/pigisland/main.cpp
+	src/kmint/pigisland/node_algorithm.cpp
+	src/kmint/pigisland/resources.cpp
+	src/kmint/pigisland/shark.cpp
+	src/kmint/pigisland/boat.cpp
+	src/kmint/pigisland/pig.cpp
+	src/states/AttackState.cpp
+	src/states/RestState.cpp
+	src/states/WanderState.cpp
+	src/states/ScaredState.cpp
+)
 
 target_compile_features(pigisland PUBLIC cxx_std_17)
 target_link_libraries(pigisland PRIVATE kmint)
