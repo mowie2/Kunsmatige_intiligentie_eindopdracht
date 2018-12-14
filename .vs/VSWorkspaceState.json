@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\pigisland",
     "\\pigisland\\include",
     "\\pigisland\\include\\kmint",
     "\\pigisland\\include\\kmint\\pigisland",
@@ -11,6 +10,6 @@
     "\\pigisland\\src\\kmint",
     "\\pigisland\\src\\states"
   ],
-  "SelectedNode": "\\pigisland\\src\\states\\Attackstate.cpp",
+  "SelectedNode": "\\pigisland",
   "PreviewInSolutionExplorer": false
 }

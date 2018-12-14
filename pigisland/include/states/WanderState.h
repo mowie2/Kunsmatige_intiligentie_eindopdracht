@@ -6,8 +6,10 @@
 #include "states/State.h"
 #include <map>
 
-namespace kmint {
-	namespace pigisland {
+namespace kmint
+{
+	namespace pigisland
+	{
 		class shark;
 	}
 }

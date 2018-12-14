@@ -1,6 +1,7 @@
 #pragma once
 
 #include"kmint/primitives.hpp"
+
 class State
 {
 public:
@@ -10,5 +11,4 @@ public:
 	virtual void Update(kmint::delta_time dt) = 0;
 
 private:
-
 };

@@ -3,8 +3,8 @@
 #include "kmint/pigisland/node_algorithm.hpp"
 #include "kmint/pigisland/resources.hpp"
 
-AttackState::AttackState(kmint::pigisland::shark& shark_) : _shark(shark_) {
-
+AttackState::AttackState(kmint::pigisland::shark& shark_) : _shark(shark_)
+{
 }
 
 void AttackState::Update(kmint::delta_time dt)

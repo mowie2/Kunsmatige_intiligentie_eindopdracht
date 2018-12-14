@@ -1,7 +1,10 @@
 #pragma once
 #include "State.h"
-namespace kmint {
-	namespace pigisland {
+
+namespace kmint
+{
+	namespace pigisland
+	{
 		class shark;
 	}
 }
