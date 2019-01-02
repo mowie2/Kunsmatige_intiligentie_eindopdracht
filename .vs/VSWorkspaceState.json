@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\libkmint",
+    "\\libkmint\\include",
+    "\\libkmint\\include\\kmint\\play",
+    "\\libkmint\\src",
+    "\\libkmint\\src\\kmint",
+    "\\libkmint\\src\\kmint\\graph",
+    "\\libkmint\\src\\kmint\\map",
+    "\\libkmint\\src\\kmint\\play",
+    "\\pigisland",
+    "\\pigisland\\resources"
+  ],
+  "SelectedNode": "\\pigisland\\src\\kmint\\pigisland\\pig.cpp",
+  "PreviewInSolutionExplorer": false
+}

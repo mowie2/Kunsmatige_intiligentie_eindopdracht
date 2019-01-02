@@ -5,6 +5,7 @@
 #include "kmint/pigisland/shark.hpp"
 #include "kmint/play.hpp"
 #include "kmint/ui.hpp"
+#include "kmint/pigisland/BorderMarker.hpp"
 
 using namespace kmint;
 int main() {
@@ -12,7 +13,7 @@ int main() {
   ui::app app{};
 
   //  maak een venster aan
-  ui::window window{app.create_window({1024, 768}, "hello")};
+  ui::window window{app.create_window({1024, 768}, "hello", 0.90)};
 
   // maak een podium aan
   play::stage s{};
@@ -25,6 +26,50 @@ int main() {
   for (int i = 0; i < 100; ++i) {
     s.build_actor<pigisland::pig>(math::vector2d(i * 10.0f, i * 6.0f));
   }
+	for(int i = 0; i <= map.size().width()/32; i++)
+	{
+		s.build_actor<pigisland::BorderMarker>(math::vector2d(i * 32.0f, 0));
+		s.build_actor<pigisland::BorderMarker>(math::vector2d(i * 32.0f, map.size().height()));
+	}
+	for (int i = 0; i <= map.size().height() / 32; i++)
+	{
+		s.build_actor<pigisland::BorderMarker>(math::vector2d(0, i * 32.0f));
+		s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() , i * 32.0f));
+	}
+	//pier 1
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(32, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(64, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(96, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(128, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(192, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(224, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(256, 32.0f));
+
+	//pier 2
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 32, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 64, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 96, 32.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 32, 64.0f));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 32, 96.0f));
+
+	//pier 3
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 32, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 32, map.size().height() - 160));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 64, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 96, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 96, map.size().height() - 160));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 96, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 96, map.size().height() - 224));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 128, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 96));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 192, map.size().height() - 96));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 64));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 192, map.size().height() - 32));
+
+
   s.build_actor<pigisland::shark>(map.graph());
   s.build_actor<pigisland::boat>(map.graph());
 

@@ -15,6 +15,13 @@ add_executable(pigisland
   src/kmint/pigisland/main.cpp
   src/kmint/pigisland/node_algorithm.cpp
   src/kmint/pigisland/resources.cpp
+  src/kmint/pigisland/Forces/Alignment.cpp
+  src/kmint/pigisland/Forces/Cohesion.cpp
+  src/kmint/pigisland/Forces/Seperation.cpp
+  src/kmint/pigisland/Forces/ToKnabbel.cpp
+  src/kmint/pigisland/Forces/ToPorcus.cpp
+  src/kmint/pigisland/Forces/AwayFromBorder.cpp
+  src/kmint/pigisland/BorderMarker.cpp
   src/kmint/pigisland/shark.cpp
   src/kmint/pigisland/boat.cpp
   src/kmint/pigisland/pig.cpp)
