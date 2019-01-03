@@ -10,7 +10,7 @@ namespace kmint {
 		class BorderMarker : public play::free_roaming_actor {
 		public:
 			BorderMarker(math::vector2d location);
-			bool must_draw() const override { return false; }
+			bool must_draw() const override { return true; }
 			const ui::drawable &drawable() const override { return drawable_; }
 			bool incorporeal() const override { return false; }
 			bool perceivable() const override { return true; }

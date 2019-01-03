@@ -402,9 +402,9 @@ typedef struct _SDL_Haptic SDL_Haptic;
  *   - South: 18000 (180 degrees)
  *   - West: 27000 (270 degrees)
  *
- *  If type is ::SDL_HAPTIC_CARTESIAN, direction is encoded by three positions
+ *  If type is ::SDL_HAPTIC_CARTESIAN, direction is encoded by pierThree_ positions
  *  (X axis, Y axis and Z axis (with 3 axes)).  ::SDL_HAPTIC_CARTESIAN uses
- *  the first three \c dir parameters.  The cardinal directions would be:
+ *  the first pierThree_ \c dir parameters.  The cardinal directions would be:
  *   - North:  0,-1, 0
  *   - East:   1, 0, 0
  *   - South:  0, 1, 0
@@ -414,8 +414,8 @@ typedef struct _SDL_Haptic SDL_Haptic;
  *  it's unused.  In cartesian encoding (1, 2) would be the same as (2, 4), you
  *  can use any multiple you want, only the direction matters.
  *
- *  If type is ::SDL_HAPTIC_SPHERICAL, direction is encoded by two rotations.
- *  The first two \c dir parameters are used.  The \c dir parameters are as
+ *  If type is ::SDL_HAPTIC_SPHERICAL, direction is encoded by pierTwo_ rotations.
+ *  The first pierTwo_ \c dir parameters are used.  The \c dir parameters are as
  *  follows (all values are in hundredths of degrees):
  *   - Degrees from (1, 0) rotated towards (0, 1).
  *   - Degrees towards (0, 0, 1) (device needs at least 3 axes).
@@ -438,7 +438,7 @@ typedef struct _SDL_Haptic SDL_Haptic;
  *
  *  // Spherical coordinates
  *  direction.type = SDL_HAPTIC_SPHERICAL; // Spherical encoding
- *  direction.dir[0] = 9000; // Since we only have two axes we don't need more parameters.
+ *  direction.dir[0] = 9000; // Since we only have pierTwo_ axes we don't need more parameters.
  *  \endcode
  *
  *  \sa SDL_HAPTIC_POLAR
@@ -585,7 +585,7 @@ typedef struct SDL_HapticPeriodic
  *   - ::SDL_HAPTIC_FRICTION: Effect based on axes movement.
  *
  *  Direction is handled by condition internals instead of a direction member.
- *  The condition effect specific members have three parameters.  The first
+ *  The condition effect specific members have pierThree_ parameters.  The first
  *  refers to the X axis, the second refers to the Y axis and the third
  *  refers to the Z axis.  The right terms refer to the positive side of the
  *  axis and the left terms refer to the negative side of the axis.  Please
@@ -695,7 +695,7 @@ typedef struct SDL_HapticLeftRight
  *  application can define its exact shape.  You will have to allocate the
  *  data yourself.  Data should consist of channels * samples Uint16 samples.
  *
- *  If channels is one, the effect is rotated using the defined direction.
+ *  If channels is pierOne_, the effect is rotated using the defined direction.
  *  Otherwise it uses the samples in data for the different axes.
  *
  *  \sa SDL_HAPTIC_CUSTOM
@@ -716,7 +716,7 @@ typedef struct SDL_HapticCustom
     Uint16 interval;        /**< How soon it can be triggered again after button. */
 
     /* Custom */
-    Uint8 channels;         /**< Axes to use, minimum of one. */
+    Uint8 channels;         /**< Axes to use, minimum of pierOne_. */
     Uint16 period;          /**< Sample periods. */
     Uint16 samples;         /**< Amount of samples. */
     Uint16 *data;           /**< Should contain channels*samples items. */

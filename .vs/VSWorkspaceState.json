@@ -3,15 +3,16 @@
     "",
     "\\libkmint",
     "\\libkmint\\include",
-    "\\libkmint\\include\\kmint\\play",
-    "\\libkmint\\src",
-    "\\libkmint\\src\\kmint",
-    "\\libkmint\\src\\kmint\\graph",
-    "\\libkmint\\src\\kmint\\map",
-    "\\libkmint\\src\\kmint\\play",
+    "\\libkmint\\include\\kmint",
     "\\pigisland",
-    "\\pigisland\\resources"
+    "\\pigisland\\include",
+    "\\pigisland\\include\\kmint",
+    "\\pigisland\\include\\kmint\\pigisland",
+    "\\pigisland\\include\\states",
+    "\\pigisland\\src",
+    "\\pigisland\\src\\kmint",
+    "\\pigisland\\src\\kmint\\pigisland"
   ],
-  "SelectedNode": "\\pigisland\\src\\kmint\\pigisland\\pig.cpp",
+  "SelectedNode": "\\pigisland\\src\\kmint\\pigisland\\BorderMarker.cpp",
   "PreviewInSolutionExplorer": false
 }

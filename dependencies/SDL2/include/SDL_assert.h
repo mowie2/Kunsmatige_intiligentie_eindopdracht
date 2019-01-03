@@ -197,7 +197,7 @@ typedef SDL_AssertState (SDLCALL *SDL_AssertionHandler)(
  *  and probably minimizing any fullscreen windows.
  *
  *  This callback may fire from any thread, but it runs wrapped in a mutex, so
- *  it will only fire from one thread at a time.
+ *  it will only fire from pierOne_ thread at a time.
  *
  *  Setting the callback to NULL restores SDL's original internal handler.
  *

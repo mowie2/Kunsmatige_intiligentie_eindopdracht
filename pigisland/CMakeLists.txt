@@ -12,19 +12,29 @@ endif()
 
   
 add_executable(pigisland
-  src/kmint/pigisland/main.cpp
-  src/kmint/pigisland/node_algorithm.cpp
-  src/kmint/pigisland/resources.cpp
-  src/kmint/pigisland/Forces/Alignment.cpp
-  src/kmint/pigisland/Forces/Cohesion.cpp
-  src/kmint/pigisland/Forces/Seperation.cpp
-  src/kmint/pigisland/Forces/ToKnabbel.cpp
-  src/kmint/pigisland/Forces/ToPorcus.cpp
-  src/kmint/pigisland/Forces/AwayFromBorder.cpp
-  src/kmint/pigisland/BorderMarker.cpp
-  src/kmint/pigisland/shark.cpp
-  src/kmint/pigisland/boat.cpp
-  src/kmint/pigisland/pig.cpp)
+	src/kmint/pigisland/main.cpp
+	src/kmint/pigisland/node_algorithm.cpp
+	src/kmint/pigisland/resources.cpp
+	src/kmint/pigisland/shark.cpp
+	src/kmint/pigisland/boat.cpp
+	src/kmint/pigisland/pig.cpp
+	src/states/AttackState.cpp
+	src/states/RestState.cpp
+	src/states/WanderState.cpp
+	src/states/ScaredState.cpp
+	src/Astar.cpp
+	src/states/SavingPigsState.cpp
+	src/states/GrassIsland.cpp
+	src/states/Forest.cpp
+	src/kmint/pigisland/Forces/Alignment.cpp
+	src/kmint/pigisland/Forces/Cohesion.cpp
+	src/kmint/pigisland/Forces/Seperation.cpp
+	src/kmint/pigisland/Forces/ToKnabbel.cpp
+	src/states/GrainField.cpp
+	src/kmint/pigisland/Forces/ToPorcus.cpp
+	src/kmint/pigisland/Forces/AwayFromBorder.cpp
+	src/kmint/pigisland/BorderMarker.cpp
+  )
 
 target_compile_features(pigisland PUBLIC cxx_std_17)
 target_link_libraries(pigisland PRIVATE kmint)

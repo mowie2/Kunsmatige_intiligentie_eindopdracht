@@ -1046,7 +1046,7 @@ typedef SDL_HitTestResult (SDLCALL *SDL_HitTest)(SDL_Window *win,
  *  Normally windows are dragged and resized by decorations provided by the
  *  system window manager (a title bar, borders, etc), but for some apps, it
  *  makes sense to drag them from somewhere else inside the window itself; for
- *  example, one might have a borderless window that wants to be draggable
+ *  example, pierOne_ might have a borderless window that wants to be draggable
  *  from any part, or simulate its own title bar, etc.
  *
  *  This function lets the app provide a callback that designates pieces of

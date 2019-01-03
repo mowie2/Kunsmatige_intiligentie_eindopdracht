@@ -1,9 +1,13 @@
 #include "kmint/pigisland/resources.hpp"
 
-namespace kmint {
-namespace pigisland {
-namespace {
-constexpr const char *graph_description = R"graph(32 24 32
+namespace kmint
+{
+	namespace pigisland
+	{
+		namespace
+		{
+			constexpr const char* graph_description =
+				R"graph(32 24 32
 resources/pigisland.png
 W 1 1
 1 1 1
@@ -39,15 +43,13 @@ SSLLLLWWWWWWWRRRRWWWWWWWWLLLLLLL
 SSWWWWWWWWWWWWWWWWWWWWWWWLLLLLLL
 KWWWWWWWWWWWWWWWWWWWWWWWWLLLLLLL
 )graph";
-}
+		}
 
-map::map map() { return map::read_map(graph_description); }
+		map::map map() { return map::read_map(graph_description); }
 
-graphics::image shark_image() { return graphics::image{"resources/shark.png"}; }
-graphics::image pig_image() { return graphics::image{"resources/pig.png"}; }
+		graphics::image shark_image() { return graphics::image{"resources/shark.png"}; }
+		graphics::image pig_image() { return graphics::image{"resources/pig.png"}; }
 
-graphics::image boat_image() { return graphics::image{"resources/boat.png"}; }
-
-} // namespace pigisland
-
+		graphics::image boat_image() { return graphics::image{"resources/boat.png"}; }
+	} // namespace pigisland
 } // namespace kmint

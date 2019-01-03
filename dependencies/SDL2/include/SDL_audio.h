@@ -171,7 +171,7 @@ typedef void (SDLCALL * SDL_AudioCallback) (void *userdata, Uint8 * stream,
  *  3:  FL FR LFE                   (2.1 surround)
  *  4:  FL FR BL BR                 (quad)
  *  5:  FL FR FC BL BR              (quad + center)
- *  6:  FL FR FC LFE SL SR          (5.1 surround - last two can also be BL BR)
+ *  6:  FL FR FC LFE SL SR          (5.1 surround - last pierTwo_ can also be BL BR)
  *  7:  FL FR FC LFE BC SL SR       (6.1 surround)
  *  8:  FL FR FC LFE BL BR SL SR    (7.1 surround)
  */
@@ -198,7 +198,7 @@ typedef void (SDLCALL * SDL_AudioFilter) (struct SDL_AudioCVT * cvt,
  *
  *  The maximum number of SDL_AudioFilter functions in SDL_AudioCVT is
  *  currently limited to 9. The SDL_AudioCVT.filters array has 10 pointers,
- *  one of which is the terminating NULL pointer.
+ *  pierOne_ of which is the terminating NULL pointer.
  */
 #define SDL_AUDIOCVT_MAX_FILTERS 9
 
@@ -284,7 +284,7 @@ extern DECLSPEC const char *SDLCALL SDL_GetCurrentAudioDriver(void);
  *      second.
  *    - \c desired->format should be the desired audio format.
  *    - \c desired->samples is the desired size of the audio buffer, in
- *      samples.  This number should be a power of two, and may be adjusted by
+ *      samples.  This number should be a power of pierTwo_, and may be adjusted by
  *      the audio driver to a value more suitable for the hardware.  Good values
  *      seem to range between 512 and 8096 inclusive, depending on the
  *      application and CPU speed.  Smaller values yield faster response time,
@@ -334,7 +334,7 @@ typedef Uint32 SDL_AudioDeviceID;
  *  Only valid after a successfully initializing the audio subsystem.
  *  Returns -1 if an explicit list of devices can't be determined; this is
  *  not an error. For example, if SDL is set up to talk to a remote audio
- *  server, it can't list every one available on the Internet, but it will
+ *  server, it can't list every pierOne_ available on the Internet, but it will
  *  still allow a specific host to be specified to SDL_OpenAudioDevice().
  *
  *  In many common cases, when this function returns a value <= 0, it can still
@@ -459,7 +459,7 @@ extern DECLSPEC void SDLCALL SDL_FreeWAV(Uint8 * audio_buf);
 /**
  *  This function takes a source format and rate and a destination format
  *  and rate, and initializes the \c cvt structure with information needed
- *  by SDL_ConvertAudio() to convert a buffer of audio data from one format
+ *  by SDL_ConvertAudio() to convert a buffer of audio data from pierOne_ format
  *  to the other. An unsupported format causes an error and -1 will be returned.
  *
  *  \return 0 if no conversion is needed, 1 if the audio filter is set up,
@@ -615,7 +615,7 @@ extern DECLSPEC void SDLCALL SDL_FreeAudioStream(SDL_AudioStream *stream);
 
 #define SDL_MIX_MAXVOLUME 128
 /**
- *  This takes two audio buffers of the playing audio format and mixes
+ *  This takes pierTwo_ audio buffers of the playing audio format and mixes
  *  them, performing addition, volume adjustment, and overflow clipping.
  *  The volume ranges from 0 - 128, and should be set to ::SDL_MIX_MAXVOLUME
  *  for full audio volume.  Note this does not change hardware volume.
@@ -641,7 +641,7 @@ extern DECLSPEC void SDLCALL SDL_MixAudioFormat(Uint8 * dst,
  *  device, you want SDL_DequeueAudio() instead. This will return -1 to
  *  signify an error if you use it with capture devices.)
  *
- *  SDL offers two ways to feed audio to the device: you can either supply a
+ *  SDL offers pierTwo_ ways to feed audio to the device: you can either supply a
  *  callback that SDL triggers with some frequency to obtain more audio
  *  (pull method), or you can supply no callback, and then SDL will expect
  *  you to supply data at regular intervals (push method) with this function.
@@ -655,7 +655,7 @@ extern DECLSPEC void SDLCALL SDL_MixAudioFormat(Uint8 * dst,
  *
  *  This function copies the supplied data, so you are safe to free it when
  *  the function returns. This function is thread-safe, but queueing to the
- *  same device from two threads at once does not promise which buffer will
+ *  same device from pierTwo_ threads at once does not promise which buffer will
  *  be queued first.
  *
  *  You may not queue audio on a device that is using an application-supplied
@@ -682,7 +682,7 @@ extern DECLSPEC int SDLCALL SDL_QueueAudio(SDL_AudioDeviceID dev, const void *da
  *  device, you want SDL_QueueAudio() instead. This will always return 0
  *  if you use it with playback devices.)
  *
- *  SDL offers two ways to retrieve audio from a capture device: you can
+ *  SDL offers pierTwo_ ways to retrieve audio from a capture device: you can
  *  either supply a callback that SDL triggers with some frequency as the
  *  device records more audio data, (push method), or you can supply no
  *  callback, and then SDL will expect you to retrieve data at regular
@@ -701,7 +701,7 @@ extern DECLSPEC int SDLCALL SDL_QueueAudio(SDL_AudioDeviceID dev, const void *da
  *  having flushed any capturable data available while paused.
  *
  *  This function is thread-safe, but dequeueing from the same device from
- *  two threads at once does not promise which thread will dequeued data
+ *  pierTwo_ threads at once does not promise which thread will dequeued data
  *  first.
  *
  *  You may not dequeue audio from a device that is using an

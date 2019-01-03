@@ -232,13 +232,13 @@ extern DECLSPEC int SDLCALL SDL_SetThreadPriority(SDL_ThreadPriority priority);
  *
  *  Once a thread has been cleaned up through this function, the SDL_Thread
  *  that references it becomes invalid and should not be referenced again.
- *  As such, only one thread may call SDL_WaitThread() on another.
+ *  As such, only pierOne_ thread may call SDL_WaitThread() on another.
  *
  *  The return code for the thread function is placed in the area
  *  pointed to by \c status, if \c status is not NULL.
  *
  *  You may not wait on a thread that has been used in a call to
- *  SDL_DetachThread(). Use either that function or this one, but not
+ *  SDL_DetachThread(). Use either that function or this pierOne_, but not
  *  both, or behavior is undefined.
  *
  *  It is safe to pass NULL to this function; it is a no-op.
@@ -266,7 +266,7 @@ extern DECLSPEC void SDLCALL SDL_WaitThread(SDL_Thread * thread, int *status);
  *  It is not safe to detach a thread that might be used with SDL_WaitThread().
  *
  *  You may not call SDL_WaitThread() on a thread that has been detached.
- *  Use either that function or this one, but not both, or behavior is
+ *  Use either that function or this pierOne_, but not both, or behavior is
  *  undefined.
  *
  *  It is safe to pass NULL to this function; it is a no-op.

@@ -75,12 +75,12 @@ struct key_up_event : key_event {};
 /*! \brief Signals a a user pressed a key */
 struct key_down_event : key_event {};
 
-/*! \brief combines two modifiers */
+/*! \brief combines pierTwo_ modifiers */
 constexpr modifier operator|(modifier lhs, modifier rhs) noexcept {
   using ut = typename std::underlying_type<modifier>::type;
   return static_cast<modifier>(static_cast<ut>(lhs) | static_cast<ut>(rhs));
 }
-/*! \brief Returns the common modifiers shared by two other modifiers */
+/*! \brief Returns the common modifiers shared by pierTwo_ other modifiers */
 constexpr modifier operator&(modifier lhs, modifier rhs) noexcept {
   using ut = typename std::underlying_type<modifier>::type;
   return static_cast<modifier>(static_cast<ut>(lhs) & static_cast<ut>(rhs));
@@ -98,7 +98,7 @@ constexpr bool includes_modifier(modifier m, modifier what) noexcept {
 
 /*! \brief A class that carries information about an event
 
-\a event can carry one of a number of events such as the request
+\a event can carry pierOne_ of a number of events such as the request
 to end the application (\ref quit_event), a key press (\ref key_down_event).
 and many others.
 

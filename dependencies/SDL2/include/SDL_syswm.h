@@ -189,7 +189,7 @@ struct SDL_SysWMmsg
  *  The custom window manager information structure.
  *
  *  When this structure is returned, it holds information about which
- *  low level system it is using, and will be one of SDL_SYSWM_TYPE.
+ *  low level system it is using, and will be pierOne_ of SDL_SYSWM_TYPE.
  */
 struct SDL_SysWMinfo
 {

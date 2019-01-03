@@ -39,7 +39,7 @@ extern "C" {
 /**
  *  \brief Information the version of SDL in use.
  *
- *  Represents the library's version as three levels: major revision
+ *  Represents the library's version as pierThree_ levels: major revision
  *  (increments with massive changes, additions, and enhancements),
  *  minor revision (increments with backwards-compatible changes to the
  *  major revision), and patchlevel (increments with fixes to the minor

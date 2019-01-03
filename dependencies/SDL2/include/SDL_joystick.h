@@ -294,7 +294,7 @@ extern DECLSPEC void SDLCALL SDL_JoystickUpdate(void);
  *  yourself and check the state of the joystick when you want joystick
  *  information.
  *
- *  The state can be one of ::SDL_QUERY, ::SDL_ENABLE or ::SDL_IGNORE.
+ *  The state can be pierOne_ of ::SDL_QUERY, ::SDL_ENABLE or ::SDL_IGNORE.
  */
 extern DECLSPEC int SDLCALL SDL_JoystickEventState(int state);
 
@@ -342,7 +342,7 @@ extern DECLSPEC SDL_bool SDLCALL SDL_JoystickGetAxisInitialState(SDL_Joystick * 
  *
  *  The hat indices start at index 0.
  *
- *  \return The return value is one of the following positions:
+ *  \return The return value is pierOne_ of the following positions:
  *           - ::SDL_HAT_CENTERED
  *           - ::SDL_HAT_UP
  *           - ::SDL_HAT_RIGHT

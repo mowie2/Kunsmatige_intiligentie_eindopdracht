@@ -93,7 +93,7 @@ extern DECLSPEC char *SDLCALL SDL_GetBasePath(void);
  *
  *    - Try to use the same org string (including case-sensitivity) for
  *      all your applications that use this function.
- *    - Always use a unique app string for each one, and make sure it never
+ *    - Always use a unique app string for each pierOne_, and make sure it never
  *      changes for an app once you've decided on it.
  *    - Unicode characters are legal, as long as it's UTF-8 encoded, but...
  *    - ...only use letters, numbers, and spaces. Avoid punctuation like

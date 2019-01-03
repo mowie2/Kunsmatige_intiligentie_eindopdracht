@@ -8,14 +8,12 @@
 #include "kmint/pigisland/BorderMarker.hpp"
 
 using namespace kmint;
-int main() {
-  // een app object is nodig om
-  ui::app app{};
 
+int main() {
+	ui::app app{};
   //  maak een venster aan
   ui::window window{app.create_window({1024, 768}, "hello", 0.90)};
 
-  // maak een podium aan
   play::stage s{};
 
   auto map = pigisland::map();
@@ -69,28 +67,29 @@ int main() {
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 64));
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 192, map.size().height() - 32));
 
+	s.build_actor<pigisland::shark>(map.graph());
+	s.build_actor<pigisland::boat>(map.graph());
 
-  s.build_actor<pigisland::shark>(map.graph());
-  s.build_actor<pigisland::boat>(map.graph());
+	// Maak een event_source aan (hieruit kun je alle events halen, zoals
+	// toetsaanslagen)
+	ui::events::event_source event_source{};
 
-  // Maak een event_source aan (hieruit kun je alle events halen, zoals
-  // toetsaanslagen)
-  ui::events::event_source event_source{};
+	// main_loop stuurt alle actors aan.
+	main_loop(s, window, [&](delta_time dt, loop_controls& ctl)
+	{
+		// gebruik dt om te kijken hoeveel tijd versterken is
+		// sinds de vorige keer dat deze lambda werd aangeroepen
+		// loop controls is een object met eigenschappen die je kunt gebruiken om de
+		// main-loop aan te sturen.
 
-  // main_loop stuurt alle actors aan.
-  main_loop(s, window, [&](delta_time dt, loop_controls &ctl) {
-    // gebruik dt om te kijken hoeveel tijd versterken is
-    // sinds de vorige keer dat deze lambda werd aangeroepen
-    // loop controls is een object met eigenschappen die je kunt gebruiken om de
-    // main-loop aan te sturen.
-
-    for (ui::events::event &e : event_source) {
-      // event heeft een methode handle_quit die controleert
-      // of de gebruiker de applicatie wilt sluiten, en zo ja
-      // de meegegeven functie (of lambda) aanroept om met het
-      // bijbehorende quit_event
-      //
-      e.handle_quit([&ctl](ui::events::quit_event qe) { ctl.quit = true; });
-    }
-  });
+		for (ui::events::event& e : event_source)
+		{
+			// event heeft een methode handle_quit die controleert
+			// of de gebruiker de applicatie wilt sluiten, en zo ja
+			// de meegegeven functie (of lambda) aanroept om met het
+			// bijbehorende quit_event
+			//
+			e.handle_quit([&ctl](ui::events::quit_event qe) { ctl.quit = true; });
+		}
+	});
 }

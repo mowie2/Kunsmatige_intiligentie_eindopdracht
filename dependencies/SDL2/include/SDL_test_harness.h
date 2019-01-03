@@ -113,8 +113,8 @@ char *SDLTest_GenerateRunSeed(const int length);
  * \brief Execute a test suite using the given run seed and execution key.
  *
  * \param testSuites Suites containing the test case.
- * \param userRunSeed Custom run seed provided by user, or NULL to autogenerate one.
- * \param userExecKey Custom execution key provided by user, or 0 to autogenerate one.
+ * \param userRunSeed Custom run seed provided by user, or NULL to autogenerate pierOne_.
+ * \param userExecKey Custom execution key provided by user, or 0 to autogenerate pierOne_.
  * \param filter Filter specification. NULL disables. Case sensitive.
  * \param testIterations Number of iterations to run each test case.
  *

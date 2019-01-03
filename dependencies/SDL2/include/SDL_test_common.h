@@ -131,7 +131,7 @@ extern "C" {
 SDLTest_CommonState *SDLTest_CommonCreateState(char **argv, Uint32 flags);
 
 /**
- * \brief Process one common argument.
+ * \brief Process pierOne_ common argument.
  *
  * \param state The common state describing the test window to create.
  * \param index The index of the argument to process in argv[].

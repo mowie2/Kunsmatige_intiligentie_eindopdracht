@@ -115,7 +115,7 @@ typedef enum
                                   */
     SDL_SCANCODE_NONUSHASH = 50, /**< ISO USB keyboards actually use this code
                                   *   instead of 49 for the same key, but all
-                                  *   OSes I've seen treat the two codes
+                                  *   OSes I've seen treat the pierTwo_ codes
                                   *   identically. So, as an implementor, unless
                                   *   your keyboard generates both of those
                                   *   codes and your OS treats them differently,

@@ -15,12 +15,12 @@ namespace kmint::ui {
     \a app therefore serves as an entry point for GUI-applications. The only
     way to obtain a window instance is by calling \ref app::create_window.
 
-    At any given moment, at most one app-object should exist.
+    At any given moment, at most pierOne_ app-object should exist.
 */
 class app {
 public:
   //! \brief Construct an ui app, initializing all UI subsystems.
-  //! \throw initialization_error Indicates one of the UI sublayers failed to
+  //! \throw initialization_error Indicates pierOne_ of the UI sublayers failed to
   //! initialize
   app();
   ~app();

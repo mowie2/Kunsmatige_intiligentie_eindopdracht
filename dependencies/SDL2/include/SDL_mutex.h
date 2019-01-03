@@ -202,7 +202,7 @@ extern DECLSPEC SDL_cond *SDLCALL SDL_CreateCond(void);
 extern DECLSPEC void SDLCALL SDL_DestroyCond(SDL_cond * cond);
 
 /**
- *  Restart one of the threads that are waiting on the condition variable.
+ *  Restart pierOne_ of the threads that are waiting on the condition variable.
  *
  *  \return 0 or -1 on error.
  */

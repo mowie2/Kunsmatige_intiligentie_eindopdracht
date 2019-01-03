@@ -341,7 +341,7 @@ typedef struct SDL_PixelFormat
 extern DECLSPEC const char* SDLCALL SDL_GetPixelFormatName(Uint32 format);
 
 /**
- *  \brief Convert one of the enumerated pixel formats to a bpp and RGBA masks.
+ *  \brief Convert pierOne_ of the enumerated pixel formats to a bpp and RGBA masks.
  *
  *  \return SDL_TRUE, or SDL_FALSE if the conversion wasn't possible.
  *

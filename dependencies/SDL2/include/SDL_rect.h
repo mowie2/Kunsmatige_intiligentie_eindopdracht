@@ -85,7 +85,7 @@ SDL_FORCE_INLINE SDL_bool SDL_RectEmpty(const SDL_Rect *r)
 }
 
 /**
- *  \brief Returns true if the two rectangles are equal.
+ *  \brief Returns true if the pierTwo_ rectangles are equal.
  */
 SDL_FORCE_INLINE SDL_bool SDL_RectEquals(const SDL_Rect *a, const SDL_Rect *b)
 {
@@ -94,7 +94,7 @@ SDL_FORCE_INLINE SDL_bool SDL_RectEquals(const SDL_Rect *a, const SDL_Rect *b)
 }
 
 /**
- *  \brief Determine whether two rectangles intersect.
+ *  \brief Determine whether pierTwo_ rectangles intersect.
  *
  *  \return SDL_TRUE if there is an intersection, SDL_FALSE otherwise.
  */
@@ -102,7 +102,7 @@ extern DECLSPEC SDL_bool SDLCALL SDL_HasIntersection(const SDL_Rect * A,
                                                      const SDL_Rect * B);
 
 /**
- *  \brief Calculate the intersection of two rectangles.
+ *  \brief Calculate the intersection of pierTwo_ rectangles.
  *
  *  \return SDL_TRUE if there is an intersection, SDL_FALSE otherwise.
  */
@@ -111,7 +111,7 @@ extern DECLSPEC SDL_bool SDLCALL SDL_IntersectRect(const SDL_Rect * A,
                                                    SDL_Rect * result);
 
 /**
- *  \brief Calculate the union of two rectangles.
+ *  \brief Calculate the union of pierTwo_ rectangles.
  */
 extern DECLSPEC void SDLCALL SDL_UnionRect(const SDL_Rect * A,
                                            const SDL_Rect * B,
