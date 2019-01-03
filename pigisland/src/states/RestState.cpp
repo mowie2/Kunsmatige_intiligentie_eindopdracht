@@ -33,10 +33,10 @@ void RestState::Update(kmint::delta_time dt)
 		if (path.empty()) {
 		
 			restCounter++;
-			std::cout << "Resting\n";
+			puts("Resting");
 			if(restCounter >= 100)
 			{
-				std::cout << "Rested\n";
+				puts("Rested");
 				_shark.stepsTaken = 0;
 				restCounter = 0;
 				_shark.SetState(pigisland::shark::WANDER_STATE);

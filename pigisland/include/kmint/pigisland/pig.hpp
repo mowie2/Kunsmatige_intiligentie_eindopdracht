@@ -32,6 +32,7 @@ namespace kmint
 			std::vector<kmint::play::actor*> getShark();
 			std::vector<kmint::play::actor*> getBoat();
 			std::vector<kmint::play::actor*> getWall();
+			void checkCollisions();
 			void hasDied(const bool alive_) { alive = !alive_; }
 		private:
 			play::image_drawable drawable_;

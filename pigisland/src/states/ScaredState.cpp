@@ -19,7 +19,7 @@ void ScaredState::Update(kmint::delta_time dt)
 	if (to_seconds(t_since_move_) >= waiting_time(_shark.node())) {
 		
 		t_since_move_ = from_seconds(0);
-		std::cout << "Im scared\n";
+		puts("Im scared\n");
 		_shark.stepsTaken++;
 		scaredCounter++;
 

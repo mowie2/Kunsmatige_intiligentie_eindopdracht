@@ -17,8 +17,8 @@ namespace kmint {
 		namespace
 		{
 			math::vector2d random_vector() {
-				auto x = random_scalar(100, 175);
-				auto y = random_scalar(550, 675);
+				auto x = random_scalar(100, 750);
+				auto y = random_scalar(100, 1200);
 				return { x, y };
 			}
 		} // namespace
@@ -110,7 +110,7 @@ namespace kmint {
 		void pigisland::pig::act(delta_time dt) {
 			free_roaming_actor::act(dt);
 
-
+			checkCollisions();
 			auto neighbours = getNeighbours();
 			auto shark = getShark();
 			auto boat = getBoat();
@@ -232,6 +232,17 @@ namespace kmint {
 		scalar pigisland::pig::radius() const
 		{
 			return 16.0f;
+		}
+		void pig::checkCollisions() {
+			for (std::size_t i = 0; i < num_colliding_actors(); ++i) {
+				auto &a = colliding_actor(i);
+				const auto porcus = dynamic_cast<boat*>(&a);
+				if (&a == porcus) {
+					reachedBoat = now();
+					hasDied(true);
+					puts("Welcome onboard porky");
+				}
+			}
 		}
 	} // namespace pigisland
 

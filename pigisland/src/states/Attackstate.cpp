@@ -89,7 +89,7 @@ void AttackState::Update(kmint::delta_time dt)
 			auto &a = _shark.colliding_actor(i);
 			const auto ppig = dynamic_cast<pig *>(&a);
 			if (&a == ppig) {
-				std::cout << "killed a pig\n";
+				puts("killed a pig");
 				ppig->hasDied(true);
 
 			}
