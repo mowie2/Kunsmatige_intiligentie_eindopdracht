@@ -22,6 +22,11 @@ add_executable(pigisland
 	src/states/RestState.cpp
 	src/states/WanderState.cpp
 	src/states/ScaredState.cpp
+	src/Astar.cpp
+	src/states/SavingPigsState.cpp
+	src/states/GrassIsland.cpp
+	src/states/Forest.cpp
+	src/states/GrainField.cpp
 )
 
 target_compile_features(pigisland PUBLIC cxx_std_17)

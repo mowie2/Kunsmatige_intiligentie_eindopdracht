@@ -21,12 +21,18 @@ namespace kmint
 		pig::pig(math::vector2d location)
 			: free_roaming_actor{random_vector()}, drawable_{*this, pig_image()}
 		{
+			born = now();
 		}
 
 
 		void pig::act(delta_time dt)
 		{
 			free_roaming_actor::act(dt);
+		}
+
+		scalar pig::radius() const
+		{
+			return 16.0f;
 		}
 	} // namespace pigisland
 } // namespace kmint

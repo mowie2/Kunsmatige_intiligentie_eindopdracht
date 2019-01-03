@@ -75,7 +75,7 @@ event event_source::next() const noexcept {
       break;
     }
   }
-  // we exhausted all events, and couldn't find one we are
+  // we exhausted all events, and couldn't find pierOne_ we are
   // supposed to return to our caller
   return {};
 }

@@ -247,7 +247,7 @@ extern DECLSPEC SDL_Joystick *SDLCALL SDL_GameControllerGetJoystick(SDL_GameCont
  *  yourself and check the state of the controller when you want controller
  *  information.
  *
- *  The state can be one of ::SDL_QUERY, ::SDL_ENABLE or ::SDL_IGNORE.
+ *  The state can be pierOne_ of ::SDL_QUERY, ::SDL_ENABLE or ::SDL_IGNORE.
  */
 extern DECLSPEC int SDLCALL SDL_GameControllerEventState(int state);
 

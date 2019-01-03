@@ -68,10 +68,10 @@ extern "C" {
 /* --- Function prototypes */
 
 /**
- *  \brief Initialize random number generator with two integers.
+ *  \brief Initialize random number generator with pierTwo_ integers.
  *
  *  Note: The random sequence of numbers returned by ...Random() is the
- *  same for the same two integers and has a period of 2^31.
+ *  same for the same pierTwo_ integers and has a period of 2^31.
  *
  *  \param rndContext     pointer to context structure
  *  \param xi         integer that defines the random sequence

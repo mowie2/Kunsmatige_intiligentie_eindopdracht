@@ -195,7 +195,7 @@ extern DECLSPEC void SDLCALL SDL_LogGetOutputFunction(SDL_LogOutputFunction *cal
 
 /**
  *  \brief This function allows you to replace the default log output
- *         function with one of your own.
+ *         function with pierOne_ of your own.
  */
 extern DECLSPEC void SDLCALL SDL_LogSetOutputFunction(SDL_LogOutputFunction callback, void *userdata);
 

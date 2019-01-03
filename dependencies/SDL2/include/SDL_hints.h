@@ -57,7 +57,7 @@ extern "C" {
  *  This variable can be set to the following values:
  *    "0"       - Disable 3D acceleration
  *    "1"       - Enable 3D acceleration, using the default renderer.
- *    "X"       - Enable 3D acceleration, using X where X is one of the valid rendering drivers.  (e.g. "direct3d", "opengl", etc.)
+ *    "X"       - Enable 3D acceleration, using X where X is pierOne_ of the valid rendering drivers.  (e.g. "direct3d", "opengl", etc.)
  *
  *  By default SDL tries to make a best guess for each platform whether
  *  to use acceleration or not.
@@ -79,7 +79,7 @@ extern "C" {
  *    "metal"
  *    "software"
  *
- *  The default varies by platform, but it's the first one in the list that
+ *  The default varies by platform, but it's the first pierOne_ in the list that
  *  is available on the current platform.
  */
 #define SDL_HINT_RENDER_DRIVER              "SDL_RENDER_DRIVER"
@@ -596,7 +596,7 @@ extern "C" {
  *  needs to take care of drawing the content in the right orientation (the
  *  framebuffer is always in portrait mode).
  *
- *  This variable can be one of the following values:
+ *  This variable can be pierOne_ of the following values:
  *    "primary" (default), "portrait", "landscape", "inverted-portrait", "inverted-landscape"
  */
 #define SDL_HINT_QTWAYLAND_CONTENT_ORIENTATION "SDL_QTWAYLAND_CONTENT_ORIENTATION"
@@ -643,7 +643,7 @@ extern "C" {
 *  \brief  A variable specifying which shader compiler to preload when using the Chrome ANGLE binaries
 *
 *  SDL has EGL and OpenGL ES2 support on Windows via the ANGLE project. It
-*  can use two different sets of binaries, those compiled by the user from source
+*  can use pierTwo_ different sets of binaries, those compiled by the user from source
 *  or those provided by the Chrome browser. In the later case, these binaries require
 *  that SDL loads a DLL providing the shader compiler.
 *
@@ -659,7 +659,7 @@ extern "C" {
 *  \brief  A variable that is the address of another SDL_Window* (as a hex string formatted with "%p").
 *  
 *  If this hint is set before SDL_CreateWindowFrom() and the SDL_Window* it is set to has
-*  SDL_WINDOW_OPENGL set (and running on WGL only, currently), then two things will occur on the newly 
+*  SDL_WINDOW_OPENGL set (and running on WGL only, currently), then pierTwo_ things will occur on the newly 
 *  created SDL_Window:
 *
 *  1. Its pixel format will be set to the same pixel format as this SDL_Window.  This is
@@ -732,17 +732,17 @@ extern "C" {
  *  device's home screen).
  *
  *  Setting the SDL_HINT_WINRT_HANDLE_BACK_BUTTON hint to "1" will cause SDL
- *  to mark back-button-press events as Handled, if and when one is sent to
+ *  to mark back-button-press events as Handled, if and when pierOne_ is sent to
  *  the app.
  *
  *  Internally, Windows Phone sends back button events as parameters to
  *  special back-button-press callback functions.  Apps that need to respond
- *  to back-button-press events are expected to register one or more
+ *  to back-button-press events are expected to register pierOne_ or more
  *  callback functions for such, shortly after being launched (during the
  *  app's initialization phase).  After the back button is pressed, the OS
  *  will invoke these callbacks.  If the app's callback(s) do not explicitly
  *  mark the event as handled by the time they return, or if the app never
- *  registers one of these callback, the OS will consider the event
+ *  registers pierOne_ of these callback, the OS will consider the event
  *  un-handled, and it will apply its default back button behavior (terminate
  *  the app).
  *
@@ -882,7 +882,7 @@ extern "C" {
  *
  * This hint only applies to the emscripten platform
  *
- * The variable can be one of
+ * The variable can be pierOne_ of
  *    "#window"      - The javascript window object (this is the default)
  *    "#document"    - The javascript document object
  *    "#screen"      - the javascript window.screen object

@@ -31,7 +31,7 @@
 #include "SDL_stdinc.h"
 
 /**
- *  \name The two types of endianness
+ *  \name The pierTwo_ types of endianness
  */
 /* @{ */
 #define SDL_LIL_ENDIAN  1234

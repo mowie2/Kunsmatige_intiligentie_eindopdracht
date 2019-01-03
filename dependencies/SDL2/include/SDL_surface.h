@@ -398,7 +398,7 @@ extern DECLSPEC SDL_Surface *SDLCALL SDL_ConvertSurfaceFormat
     (SDL_Surface * src, Uint32 pixel_format, Uint32 flags);
 
 /**
- * \brief Copy a block of pixels of one format to another format
+ * \brief Copy a block of pixels of pierOne_ format to another format
  *
  *  \return 0 on success, or -1 if there was an error
  */
@@ -499,7 +499,7 @@ extern DECLSPEC int SDLCALL SDL_LowerBlit
      SDL_Surface * dst, SDL_Rect * dstrect);
 
 /**
- *  \brief Perform a fast, low quality, stretch blit between two surfaces of the
+ *  \brief Perform a fast, low quality, stretch blit between pierTwo_ surfaces of the
  *         same pixel format.
  *
  *  \note This function uses a static buffer, and is not thread-safe.

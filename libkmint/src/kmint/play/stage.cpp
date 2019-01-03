@@ -9,7 +9,7 @@ namespace {
 template <typename ForwardIt>
 void check_interactions(ForwardIt begin, ForwardIt end) {
   for (auto i = begin; i != end; ++i) {
-    // ++ForwardIt{i} ensures that j points one element further than i
+    // ++ForwardIt{i} ensures that j points pierOne_ element further than i
     // This reduces the constant factor of the algorithm by approximately 1/2.
     for (auto j = ++ForwardIt{i}; j != end; ++j) {
       if (i == j) {

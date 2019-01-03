@@ -38,7 +38,7 @@
  *
  *  This API is designed to accelerate simple 2D operations. You may
  *  want more functionality such as polygons and particle effects and
- *  in that case you should use SDL's OpenGL/Direct3D support or one
+ *  in that case you should use SDL's OpenGL/Direct3D support or pierOne_
  *  of the many good 3D engines.
  *
  *  These functions must be called from the main thread.
@@ -135,7 +135,7 @@ typedef struct SDL_Texture SDL_Texture;
  *         display.
  *
  *  A render driver is a set of code that handles rendering and texture
- *  management on a particular display.  Normally there is only one, but
+ *  management on a particular display.  Normally there is only pierOne_, but
  *  some drivers may have several available with different capabilities.
  *
  *  \sa SDL_GetRenderDriverInfo()
@@ -179,7 +179,7 @@ extern DECLSPEC int SDLCALL SDL_CreateWindowAndRenderer(
  *
  *  \param window The window where rendering is displayed.
  *  \param index    The index of the rendering driver to initialize, or -1 to
- *                  initialize the first one supporting the requested flags.
+ *                  initialize the first pierOne_ supporting the requested flags.
  *  \param flags    ::SDL_RendererFlags.
  *
  *  \return A valid rendering context or NULL if there was an error.
@@ -511,7 +511,7 @@ extern DECLSPEC void SDLCALL SDL_RenderGetLogicalSize(SDL_Renderer * renderer, i
  *  \param enable   Enable or disable integer scaling
  *
  *  This function restricts the logical viewport to integer values - that is, when
- *  a resolution is between two multiples of a logical size, the viewport size is
+ *  a resolution is between pierTwo_ multiples of a logical size, the viewport size is
  *  rounded down to the lower multiple.
  *
  *  \sa SDL_RenderSetLogicalSize()

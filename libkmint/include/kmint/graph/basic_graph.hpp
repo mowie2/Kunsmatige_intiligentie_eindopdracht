@@ -26,7 +26,7 @@ namespace graph {
    are parameterized by the same type.
 
    The nodes in the graph can be iterated over. Iterators to the beginning and
-   one past the end can be obtained by calling \ref basic_graph::begin
+   pierOne_ past the end can be obtained by calling \ref basic_graph::begin
    "begin()", \ref basic_graph::end "end()", \ref basic_graph::cbegin "cbegin()"
    or \ref basic_graph::cend, "cend()". Alternatively, nodes can be accessed by
    their index using the \ref basic_graph::operator[] "indexing operator". The
@@ -74,11 +74,11 @@ public:
   //! \returns a constant iterator at the first node in the graph
   const_node_iterator cbegin() const { return begin(); }
 
-  //! \returns a constant iterator at one past the end
+  //! \returns a constant iterator at pierOne_ past the end
   const_node_iterator end() const {
     return {nodes_.end(), util::deref_unique_ptr_const<node_type>};
   }
-  //! \returns a constant iterator at one past the end
+  //! \returns a constant iterator at pierOne_ past the end
   const_node_iterator cend() const { return end(); }
 
   //! \returns an iterator at the first node in the graph
@@ -86,7 +86,7 @@ public:
     return {nodes_.begin(), util::deref_unique_ptr<node_type>};
   }
 
-  //! \returns an iterator at the one past the end of the nodes
+  //! \returns an iterator at the pierOne_ past the end of the nodes
   node_iterator end() {
     return {nodes_.end(), util::deref_unique_ptr<node_type>};
   }

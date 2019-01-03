@@ -5,6 +5,7 @@
 #include "../../../include/states/WanderState.h"
 #include "../../../include/states/RestState.h"
 #include "../../../include/states/ScaredState.h"
+#include "Astar.h"
 
 namespace kmint
 {
@@ -35,6 +36,28 @@ namespace kmint
 		void shark::SetState(STATE_NAMES state)
 		{
 			currentState = States[state].get();
+		}
+
+		void shark::setPathTo(const kmint::map::map_node& target)
+		{
+			path = astar.FindShortestPath(this->node(), target);
+		}
+		void shark::goToRestingPlace()
+		{
+			path = astar.FindShortestPath(this->node(), *resting_place_);
+		}
+		const std::vector<const kmint::map::map_node*> shark::get_path() const {
+			return this->path;
+		}
+
+		scalar shark::range_of_perception() const
+		{
+			return 100;
+		}
+
+		bool shark::perceptive() const
+		{
+			return true;
 		}
 	} // namespace pigisland
 } // namespace kmint

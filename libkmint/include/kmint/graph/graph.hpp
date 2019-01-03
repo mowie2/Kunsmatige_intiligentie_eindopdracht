@@ -17,7 +17,7 @@ std::istream &operator>>(std::istream &is, no_node_info & /*unused*/);
 using graph = basic_graph<no_node_info>;
 //! An alias for a basic_node that carries no additional information
 using node = basic_node<no_node_info>;
-//! An alias for a basic_edge that joins two nodes that carry no additional
+//! An alias for a basic_edge that joins pierTwo_ nodes that carry no additional
 //! information
 using edge = basic_edge<no_node_info>;
 

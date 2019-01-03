@@ -12,7 +12,7 @@ namespace kmint::map {
 
 /*! \brief a structure containing information about a tile of a graph
 
-This struct contains two members: \a kind and \a reward. The latter is used for
+This struct contains pierTwo_ members: \a kind and \a reward. The latter is used for
 Q-learning algorithms.
 */
 struct map_node_info {

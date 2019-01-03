@@ -101,7 +101,7 @@ typedef enum
  *
  * The gyroscope returns the current rate of rotation in radians per second.
  * The rotation is positive in the counter-clockwise direction. That is,
- * an observer looking from a positive location on one of the axes would
+ * an observer looking from a positive location on pierOne_ of the axes would
  * see positive rotation on that axis when it appeared to be rotating
  * counter-clockwise.
  *

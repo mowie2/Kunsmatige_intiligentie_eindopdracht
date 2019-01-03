@@ -6,6 +6,7 @@
 #include "kmint/primitives.hpp"
 #include "states/State.h"
 #include <map>
+#include "Astar.h"
 
 namespace kmint
 {
@@ -29,13 +30,22 @@ namespace kmint
 			scalar radius() const override { return 16.0; }
 			void act(delta_time dt) override;
 			void SetState(STATE_NAMES state);
+			void setPathTo(const kmint::map::map_node& target);
+			void goToRestingPlace();
+			const std::vector<const kmint::map::map_node*> shark::get_path() const;
+			map::map_node const* resting_place_;
+			int stepsTaken = 0;
+			scalar range_of_perception() const override;
+			bool perceptive() const override;
+
+
 
 		private:
 			play::image_drawable drawable_;
 			map::map_graph* map_;
-			map::map_node const* resting_place_;
 
-
+			std::vector<const kmint::map::map_node*> path;
+			Astar astar;
 			void RegisterStates();
 			State* currentState;
 			std::map<STATE_NAMES, std::unique_ptr<State>> States;

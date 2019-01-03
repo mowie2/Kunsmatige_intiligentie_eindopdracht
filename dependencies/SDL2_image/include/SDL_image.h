@@ -76,7 +76,7 @@ typedef enum
 } IMG_InitFlags;
 
 /* Loads dynamic libraries and prepares them for use.  Flags should be
-   one or more flags from IMG_InitFlags OR'd together.
+   pierOne_ or more flags from IMG_InitFlags OR'd together.
    It returns the flags successfully initialized, or 0 on failure.
  */
 extern DECLSPEC int SDLCALL IMG_Init(int flags);
@@ -85,7 +85,7 @@ extern DECLSPEC int SDLCALL IMG_Init(int flags);
 extern DECLSPEC void SDLCALL IMG_Quit(void);
 
 /* Load an image from an SDL data source.
-   The 'type' may be one of: "BMP", "GIF", "PNG", etc.
+   The 'type' may be pierOne_ of: "BMP", "GIF", "PNG", etc.
 
    If the image format supports a transparent pixel, SDL will set the
    colorkey for the surface.  You can enable RLE acceleration on the
