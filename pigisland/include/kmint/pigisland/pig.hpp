@@ -14,12 +14,13 @@ namespace kmint
 		public:
 			explicit pig(math::vector2d location);
 			explicit pig(pig& gather, pig& mother, math::vector2d location);
+			void newPig(pig& gather, pig& mother, math::vector2d location, pig& child);
 			const ui::drawable& drawable() const override { return drawable_; }
 			void move(math::vector2d delta) { location(location() + delta); }
 			void act(delta_time dt) override;
 			bool perceptive() const override { return true; }
 			scalar range_of_perception() const override { return 30.0f; }
-
+			void randomLocation(pig& pig);
 			scalar radius()	const override;
 			bool incorporeal() const override { return false; }
 			bool must_draw() const override { return alive; }
@@ -33,9 +34,11 @@ namespace kmint
 			std::vector<kmint::play::actor*> getBoat();
 			std::vector<kmint::play::actor*> getWall();
 			void hasDied(const bool alive_) { alive = !alive_; }
+			bool alive = true;
+			void randomLocation();
 		private:
 			play::image_drawable drawable_;
-			bool alive = true;
+			
 			math::vector2d velocity;
 			float angle;
 			std::vector<std::unique_ptr<Force>> forces;

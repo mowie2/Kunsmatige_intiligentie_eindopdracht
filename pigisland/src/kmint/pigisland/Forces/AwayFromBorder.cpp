@@ -15,7 +15,7 @@ kmint::math::basic_vector2d<float> AwayFromBorder::addForce(std::vector<kmint::p
 	if (!neighbours.empty())
 	{
 		force /= neighbours.size();
-		force = normalize(force);
+		//force = normalize(force);
 
 		force *= factor;
 		force = force * -1;

@@ -22,4 +22,5 @@ public:
 private:
 	kmint::delta_time t_since_move_{};
 	int restCounter = 0;
+	void newGeneration();
 };

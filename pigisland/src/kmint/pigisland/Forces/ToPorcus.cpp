@@ -8,7 +8,7 @@ kmint::math::basic_vector2d<float> ToPorcus::addForce(std::vector<kmint::play::a
 		const float yDif = neighbours[0]->location().y() - actor.heading().y();
 		kmint::math::vector2d vect(xDif, yDif);
 		force += vect;
-		force = normalize(force);
+		//force = normalize(force);
 
 		force *= factor;
 	}

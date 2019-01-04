@@ -91,6 +91,7 @@ void AttackState::Update(kmint::delta_time dt)
 			if (&a == ppig) {
 				std::cout << "killed a pig\n";
 				ppig->hasDied(true);
+				ppig->death = now();
 
 			}
 		}

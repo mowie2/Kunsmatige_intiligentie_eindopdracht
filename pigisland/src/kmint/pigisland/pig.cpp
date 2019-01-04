@@ -17,14 +17,20 @@ namespace kmint {
 		namespace
 		{
 			math::vector2d random_vector() {
-				auto x = random_scalar(100, 175);
-				auto y = random_scalar(550, 675);
+				auto x = random_scalar(300, 500);
+				auto y = random_scalar(300, 675);
+				return { x, y };
+			}
+			math::vector2d my_Random_Vector()
+			{
+				auto x = random_scalar(100, 924);
+				auto y = random_scalar(50, 728);
 				return { x, y };
 			}
 		} // namespace
 
 		pigisland::pig::pig(math::vector2d location)
-			: free_roaming_actor{ random_vector() }, drawable_{ *this, pig_image() }
+			: free_roaming_actor{ my_Random_Vector() }, drawable_{ *this, pig_image() }
 		{
 			velocity = math::vector2d(1, -1);
 			angle = 0;
@@ -43,7 +49,7 @@ namespace kmint {
 		}
 
 		pigisland::pig::pig(pig& father, pig& mother, math::vector2d location)
-			: free_roaming_actor{ location }, drawable_{ *this, pig_image() }
+			: free_roaming_actor{ my_Random_Vector() }, drawable_{ *this, pig_image() }
 		{
 			born = now();
 			std::vector<pig*> parents;
@@ -104,6 +110,69 @@ namespace kmint {
 				forces.emplace_back(parents[random]->forces[4]->clone());
 			}
 			forces.emplace_back(parents[0]->forces[5]->clone());
+		}
+
+		void pig::newPig(pig& father, pig& mother, math::vector2d location, pig& child)
+		{
+			std::vector<pig*> parents;
+			parents.push_back(&father);
+			parents.push_back(&mother);
+
+			child.velocity = math::vector2d(1, -1);
+			int mutation = random_int(0, 50);
+			child.angle = 0;
+			float random = random_int(0, 2);
+			if (mutation == 0)
+			{
+				float value = random_scalar(0, 1);
+				child.forces.emplace_back(std::make_unique<Alignment>(*this, velocity, value));
+			}
+			else
+			{
+				child.forces.emplace_back(parents[random]->forces[0]->clone());
+			}
+			if (mutation == 1)
+			{
+				float value = random_scalar(0, 1);
+				child.forces.emplace_back(std::make_unique<Cohesion>(*this, velocity, value));
+			}
+			else
+			{
+				random = random_int(0, 2);
+				child.forces.emplace_back(parents[random]->forces[1]->clone());
+			}
+			if (mutation == 2)
+			{
+				float value = random_scalar(0, 1);
+				child.forces.emplace_back(std::make_unique<Seperation>(*this, velocity, value));
+			}
+			else
+			{
+				random = random_int(0, 2);
+				child.forces.emplace_back(parents[random]->forces[2]->clone());
+			}
+			if (mutation == 3)
+			{
+				float value = random_scalar(-1, 1);
+				child.forces.emplace_back(std::make_unique<ToKnabbel>(*this, velocity, value));
+			}
+			else
+			{
+				random = random_int(0, 2);
+				child.forces.emplace_back(parents[random]->forces[3]->clone());
+			}
+			if (mutation == 4)
+			{
+				float value = random_scalar(-1, 1);
+				child.forces.emplace_back(std::make_unique<ToPorcus>(*this, velocity, value));
+			}
+			else
+			{
+				random = random_int(0, 2);
+				child.forces.emplace_back(parents[random]->forces[4]->clone());
+			}
+			child.forces.emplace_back(parents[0]->forces[5]->clone());
+			//child.location(my_Random_Vector());
 		}
 
 
@@ -229,6 +298,12 @@ namespace kmint {
 			}
 			return boat;
 		}
+
+		void pig::randomLocation(pig& pig)
+		{
+			pig.location(my_Random_Vector());
+		}
+
 		scalar pigisland::pig::radius() const
 		{
 			return 16.0f;

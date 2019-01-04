@@ -6,14 +6,19 @@
 #include "kmint/play.hpp"
 #include "kmint/ui.hpp"
 #include "kmint/pigisland/BorderMarker.hpp"
+#include "kmint/random.hpp"
 
 using namespace kmint;
-
+math::vector2d random_island_location() {
+	auto x = random_scalar(100, 175);
+	auto y = random_scalar(550, 675);
+	return { x, y };
+}
 int main() {
 	ui::app app{};
   //  maak een venster aan
   ui::window window{app.create_window({1024, 768}, "hello", 0.90)};
-
+  std::vector<kmint::pigisland::pig*> pigs;
   play::stage s{};
 
   auto map = pigisland::map();
@@ -21,8 +26,10 @@ int main() {
   s.build_actor<play::background>(math::size(1024, 768),
                                   graphics::image{map.background_image()});
   s.build_actor<play::map_actor>(math::vector2d{0.f, 0.f}, map.graph());
+ 
   for (int i = 0; i < 100; ++i) {
-    s.build_actor<pigisland::pig>(math::vector2d(i * 10.0f, i * 6.0f));
+    auto* x = &s.build_actor<pigisland::pig>(math::vector2d(i * 10.0f, i * 6.0f));
+	pigs.push_back(x);
   }
 	for(int i = 0; i <= map.size().width()/32; i++)
 	{
@@ -67,7 +74,7 @@ int main() {
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 64));
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 192, map.size().height() - 32));
 
-	s.build_actor<pigisland::shark>(map.graph());
+	s.build_actor<pigisland::shark>(map.graph(), pigs);
 	s.build_actor<pigisland::boat>(map.graph());
 
 	// Maak een event_source aan (hieruit kun je alle events halen, zoals

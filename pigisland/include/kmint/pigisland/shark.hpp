@@ -7,7 +7,13 @@
 #include "states/State.h"
 #include <map>
 #include "Astar.h"
+#include "pig.hpp"
 
+namespace kmint {
+	namespace pigisland {
+		class pig;
+	}
+}
 namespace kmint
 {
 	namespace pigisland
@@ -24,7 +30,8 @@ namespace kmint
 				SCARED_STATE
 			};
 
-			shark(map::map_graph& g);
+			shark(map::map_graph& g, std::vector<pig*> p);
+			std::vector<pig*> pigs;
 			ui::drawable const& drawable() const override { return drawable_; }
 			bool incorporeal() const override { return false; }
 			scalar radius() const override { return 16.0; }

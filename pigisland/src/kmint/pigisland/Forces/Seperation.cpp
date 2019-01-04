@@ -12,7 +12,7 @@ kmint::math::basic_vector2d<float> Seperation::addForce(std::vector<kmint::play:
 	if (!neighbours.empty())
 	{
 		force /= neighbours.size();
-		force = normalize(force);
+		//force = normalize(force);
 
 		force *= factor;
 		force = force * -1;
