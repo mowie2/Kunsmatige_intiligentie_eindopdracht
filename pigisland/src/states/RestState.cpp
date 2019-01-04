@@ -33,10 +33,10 @@ void RestState::Update(kmint::delta_time dt)
 		if (path.empty()) {
 
 			restCounter++;
-			std::cout << "Resting\n";
-			if (restCounter >=1)
+			puts("Resting");
+			if(restCounter >= 100)
 			{
-				std::cout << "Rested\n";
+				puts("Rested");
 				_shark.stepsTaken = 0;
 				restCounter = 0;
 				newGeneration();
