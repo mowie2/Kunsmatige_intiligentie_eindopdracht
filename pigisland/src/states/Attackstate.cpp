@@ -19,7 +19,7 @@ void AttackState::Update(kmint::delta_time dt)
 	t_since_move_ += dt;
 
 	if (to_seconds(t_since_move_) >= waiting_time(_shark.node())) {
-		std::cout << "Attacking\n";
+		//std::cout << "Attacking\n";
 		
 		// Check if tired
 		if (_shark.stepsTaken == 100)
@@ -37,7 +37,7 @@ void AttackState::Update(kmint::delta_time dt)
 			play::actor* ptr = &(*possibleTarget);
 			if (dynamic_cast<pigisland::boat*>(ptr))
 			{
-				std::cout << "Yikes a boat!\n";
+				//std::cout << "Yikes a boat!\n";
 				_shark.SetState(_shark.SCARED_STATE);
 				return;
 			}
@@ -82,14 +82,14 @@ void AttackState::Update(kmint::delta_time dt)
 			_shark.stepsTaken++;
 			_shark.node(*_shark.get_path()[0]);
 			t_since_move_ = from_seconds(0);
-			std::cout << "On the move\n";
+			//std::cout << "On the move\n";
 		}
 
 		for (std::size_t i = 0; i < _shark.num_colliding_actors(); ++i) {
 			auto &a = _shark.colliding_actor(i);
 			const auto ppig = dynamic_cast<pig *>(&a);
 			if (&a == ppig) {
-				puts("killed a pig");
+				//puts("killed a pig");
 				ppig->hasDied(true);
 				ppig->death = now();
 

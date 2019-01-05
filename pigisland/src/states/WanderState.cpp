@@ -20,7 +20,7 @@ void WanderState::Update(delta_time dt)
 	t_since_move_ += dt;
 	if (to_seconds(t_since_move_) >= waiting_time(_shark.node()))
 	{
-		puts("Wandering");
+		//puts("Wandering");
 		
 		if (_shark.stepsTaken == 100)
 		{
@@ -32,7 +32,7 @@ void WanderState::Update(delta_time dt)
 		{
 			const auto ppig = dynamic_cast<pig *>(&(*possibleTarget));
 			if (&(*possibleTarget) == ppig) {
-				puts("Found a pig");
+				//puts("Found a pig");
 				_shark.SetState(_shark.ATTACK_STATE);
 				return;
 

@@ -23,7 +23,7 @@ void RestState::Update(kmint::delta_time dt)
 
 		if (!path.empty())
 		{
-			std::cout << "Moving to rest spot\n";
+			//std::cout << "Moving to rest spot\n";
 			_shark.node(*path[0]);
 			t_since_move_ = from_seconds(0);
 		}
@@ -33,10 +33,10 @@ void RestState::Update(kmint::delta_time dt)
 		if (path.empty()) {
 
 			restCounter++;
-			puts("Resting");
-			if(restCounter >= 100)
+			//puts("Resting");
+			if (restCounter >= 1)
 			{
-				puts("Rested");
+				//puts("Rested");
 				_shark.stepsTaken = 0;
 				restCounter = 0;
 				newGeneration();
@@ -93,12 +93,12 @@ void RestState::newGeneration()
 			selected.push_back(tempPig);
 			tempPigs.erase(std::remove(tempPigs.begin(), tempPigs.end(), tempPig), tempPigs.end());
 		}
-		
+
 	}
 	newGeneration = selected;
-	while(true)
+	while (true)
 	{
-		if(newGeneration.size() == 100)
+		if (newGeneration.size() == 100)
 		{
 			break;
 		}
@@ -118,4 +118,26 @@ void RestState::newGeneration()
 		production->randomLocation(*pig);
 	}
 	_shark.pigs = newGeneration;
+	float f0 = 0;
+	float f1 = 0;
+	float f2 = 0;
+	float f3 = 0;
+	float f4 = 0;
+	for (auto* pig : newGeneration)
+	{
+		f0 += (pig->forces[0]->Factor() / 100);
+		f1 += (pig->forces[1]->Factor() / 100);
+		f2 += (pig->forces[2]->Factor() / 100);
+		f3 += (pig->forces[3]->Factor() / 100);
+		f4 += (pig->forces[4]->Factor() / 100);
+	}
+	GenerationCount++;
+	std::cout << "==================================================\n";
+	std::cout << "Generation: " << GenerationCount << "\n";
+	std::cout << "Alignment: " << f0 << "\n";
+	std::cout << "Cohesion: " << f1 << "\n";
+	std::cout << "Seperation: " << f2 << "\n";
+	std::cout << "ToKnabble: " << f3 << "\n";
+	std::cout << "ToPorcus: " << f4 << "\n";
+	std::cout << "==================================================\n";
 }

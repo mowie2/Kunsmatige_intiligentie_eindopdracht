@@ -37,12 +37,13 @@ namespace kmint
 			void hasDied(const bool alive_) { alive = !alive_; }
 			bool alive = true;
 			void randomLocation();
+
+			std::vector<std::unique_ptr<Force>> forces;
 		private:
 			play::image_drawable drawable_;
 			
 			math::vector2d velocity;
 			float angle;
-			std::vector<std::unique_ptr<Force>> forces;
 			float maxSpeed = 3;
 		}; // namespace kmint
 	}

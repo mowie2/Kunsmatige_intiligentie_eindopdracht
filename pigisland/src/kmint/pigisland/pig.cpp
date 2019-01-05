@@ -315,7 +315,7 @@ namespace kmint {
 				if (&a == porcus) {
 					reachedBoat = now();
 					hasDied(true);
-					puts("Welcome onboard porky");
+					//puts("Welcome onboard porky");
 				}
 			}
 		}
