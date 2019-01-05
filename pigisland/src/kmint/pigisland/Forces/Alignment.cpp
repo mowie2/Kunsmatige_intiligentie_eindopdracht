@@ -12,7 +12,7 @@ kmint::math::basic_vector2d<float> Alignment::addForce(std::vector<kmint::play::
 	if(!neighbours.empty())
 	{
 		force /= neighbours.size();
-		//force = normalize(force);
+		force = normalize(force);
 
 		force *= factor;
 	}

@@ -13,9 +13,9 @@ kmint::math::basic_vector2d<float> Cohesion::addForce(std::vector<kmint::play::a
 	if (!neighbours.empty())
 	{
 		force /= neighbours.size();
-		//force = normalize(force);
+		force = normalize(force);
 
-		force *= factor;
+		force *= factor * 3;
 	}
 
 	return force;

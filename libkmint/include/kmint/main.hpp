@@ -6,7 +6,8 @@
 #include "kmint/primitives.hpp"
 #include "kmint/ui/drawable.hpp"
 #include "kmint/ui/window.hpp"
-
+#include <Windows.h>
+#include <iostream>
 /*! \defgroup Main The main loop
 @{
 */
@@ -56,13 +57,28 @@ struct loop_controls {
   \param f a callable object that accepts a \ref kmint::delta_time "delta_time"
   \ref kmint::loop_controls object. \ingroup Main
 */
+
+int speed = 1;
 template <typename MainFun>
 void main_loop(play::stage &s, ui::window &w, MainFun f) {
+
   time t_prev = now();
   loop_controls ctl{};
   while (true) {
+    if (GetKeyState('A') &
+        0x8000 /*check if high-order bit is set (1 << 15)*/) {
+      speed++;
+      std::cout << "speed: " << speed;
+    }
+    if (GetKeyState('D') &
+        0x8000 /*check if high-order bit is set (1 << 15)*/) {
+      if (speed != 1) {
+        speed--;
+        std::cout << "speed: " << speed;
+      }
+    }
     time t_current = now();
-    delta_time dt = (t_current - t_prev) * 10;
+    delta_time dt = (t_current - t_prev) * speed;
     t_prev = t_current;
     f(dt, ctl);
     if (ctl.quit)

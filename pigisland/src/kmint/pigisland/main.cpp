@@ -74,6 +74,19 @@ int main() {
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 160, map.size().height() - 64));
 	s.build_actor<pigisland::BorderMarker>(math::vector2d(map.size().width() - 192, map.size().height() - 32));
 
+
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(96, map.size().height() - 96));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(128, map.size().height() - 96));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, map.size().height() - 96));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(96, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(96, map.size().height() - 160));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(96, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(128, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(192, map.size().height() - 192));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, map.size().height() - 128));
+	s.build_actor<pigisland::BorderMarker>(math::vector2d(160, map.size().height() - 160));
+
 	s.build_actor<pigisland::shark>(map.graph(), pigs);
 	s.build_actor<pigisland::boat>(map.graph());
 

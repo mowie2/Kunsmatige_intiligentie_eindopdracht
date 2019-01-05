@@ -8,10 +8,10 @@ kmint::math::basic_vector2d<float> ToKnabbel::addForce(std::vector<kmint::play::
 		const float yDif = neighbours[0]->location().y() - actor.heading().y();
 		kmint::math::vector2d vect(xDif, yDif);
 		force += vect;
-		//force = normalize(force);
+		force = normalize(force);
 
 		force *= factor;
-		force = force * -1;
+		force = force ;
 	}
 
 	

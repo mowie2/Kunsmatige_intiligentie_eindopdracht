@@ -23,8 +23,8 @@ namespace kmint {
 			}
 			math::vector2d my_Random_Vector()
 			{
-				auto x = random_scalar(100, 924);
-				auto y = random_scalar(50, 728);
+				auto x = random_scalar(200, 824);
+				auto y = random_scalar(150, 628);
 				return { x, y };
 			}
 		} // namespace
@@ -32,7 +32,7 @@ namespace kmint {
 		pigisland::pig::pig(math::vector2d location)
 			: free_roaming_actor{ my_Random_Vector() }, drawable_{ *this, pig_image() }
 		{
-			velocity = math::vector2d(1, -1);
+			velocity = math::vector2d(random_scalar(-1, 1), random_scalar(-1, 1));
 			angle = 0;
 			born = now();
 			float random = random_scalar(0, 1);
@@ -118,6 +118,7 @@ namespace kmint {
 			parents.push_back(&father);
 			parents.push_back(&mother);
 
+			child.forces.clear();
 			child.velocity = math::vector2d(1, -1);
 			int mutation = random_int(0, 50);
 			child.angle = 0;
@@ -172,7 +173,6 @@ namespace kmint {
 				child.forces.emplace_back(parents[random]->forces[4]->clone());
 			}
 			child.forces.emplace_back(parents[0]->forces[5]->clone());
-			//child.location(my_Random_Vector());
 		}
 
 

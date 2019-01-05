@@ -39,12 +39,13 @@ namespace kmint
 			void randomLocation();
 
 			std::vector<std::unique_ptr<Force>> forces;
-		private:
 			play::image_drawable drawable_;
-			
+
 			math::vector2d velocity;
 			float angle;
 			float maxSpeed = 3;
+		private:
+
 		}; // namespace kmint
 	}
 }

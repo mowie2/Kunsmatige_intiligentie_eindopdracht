@@ -1,10 +1,12 @@
 #pragma once
 #include "State.h"
+#include "kmint/math/vector2d.hpp"
 
 namespace kmint
 {
 	namespace pigisland
 	{
+		class pig;
 		class shark;
 	}
 }
@@ -24,4 +26,5 @@ private:
 	int restCounter = 0;
 	void newGeneration();
 	int GenerationCount = 0;
+	void newPig(kmint::pigisland::pig& father, kmint::pigisland::pig& mother, kmint::math::vector2d location, kmint::pigisland::pig& child);
 };

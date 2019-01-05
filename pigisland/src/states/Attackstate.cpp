@@ -85,20 +85,21 @@ void AttackState::Update(kmint::delta_time dt)
 			//std::cout << "On the move\n";
 		}
 
-		for (std::size_t i = 0; i < _shark.num_colliding_actors(); ++i) {
-			auto &a = _shark.colliding_actor(i);
-			const auto ppig = dynamic_cast<pig *>(&a);
-			if (&a == ppig) {
-				//puts("killed a pig");
-				ppig->hasDied(true);
-				ppig->death = now();
 
-			}
-		}
 		if (_shark.get_path().empty())
 		{
 			_shark.SetState(shark::STATE_NAMES::WANDER_STATE);
 			return;
+		}
+	}
+	for (std::size_t i = 0; i < _shark.num_colliding_actors(); ++i) {
+		auto &a = _shark.colliding_actor(i);
+		const auto ppig = dynamic_cast<pig *>(&a);
+		if (&a == ppig) {
+			//puts("killed a pig");
+			ppig->hasDied(true);
+			ppig->death = now();
+
 		}
 	}
 }
